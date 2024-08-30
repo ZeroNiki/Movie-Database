@@ -4,28 +4,24 @@
 {% endblock %}
 
 {% block content %}
-<div class="media-search">
-  <input type="text" placeholder="Enter name the movie">
-</div>
-
 <div class="popular-movie">
-  <h2>Popular</h2>
+  <h2>Movies</h2>
 
   <div class="movie-list">
-    {% for link in links %} 
+    {% for row in data %} 
       <a href="#">
-        <img src="{{ link.url }}" alt="hello world">
+        <img src="{{ row.poster_path }}" alt="hello world">
         <div class="movie-rating 
-            {% if link.rating|int >= 8 %}
+            {% if row.vote_average|int >= 8 %}
               rating-green
-            {% elif link.rating|int >= 5 %}
+            {% elif row.vote_average|int >= 5 %}
               rating-yellow
             {% else %}
               rating-red
             {% endif %}">
-          {{ link.rating }}<sup>*</sup>
+          {{ row.vote_average }}
         </div>
-        <div class="movie-name">{{ link.name }}</div>
+        <div class="movie-name">{{ row.title }}</div>
       </a> 
     {% endfor %}
 

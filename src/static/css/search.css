@@ -1,0 +1,41 @@
+.search-results {
+  display: block;
+  background-color: green;
+  position: absolute;
+  width: 1200px;
+  height: 100vh;
+  box-sizing: border-box;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.result {
+  height: 200px;
+  background-color: lightblue;
+  /* padding: 20px; */
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+}
+
+/* Убираем отступ у последнего div */
+.result:last-child {
+  margin-bottom: 0;
+}
+
+.result img {
+  width: 150px;
+  height: 100%;
+}
+
+.result-name {
+  text-decoration: none;
+  padding-top: 20px;
+}
+
+.result-date {
+  padding-top: 0px;
+}

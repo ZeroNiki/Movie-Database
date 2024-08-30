@@ -1,5 +1,10 @@
-from fastapi import APIRouter, Request
+from fastapi import APIRouter, Request, Depends, HTTPException
+from fastapi.responses import HTMLResponse
+from typing import Optional
 from fastapi.templating import Jinja2Templates
+
+from src.operations.router import get_movies, search_query
+from src.operations.utils import get_db
 
 
 router = APIRouter(
@@ -10,22 +15,21 @@ router = APIRouter(
 templates = Jinja2Templates(directory="src/templates")
 
 
-@router.get("/home")
-def home_page(request: Request):
-    links = [
-        {'url': 'https://image.tmdb.org/t/p/w500/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg',
-            'name': "Deadpool & Wolverine", "rating": round(7.77)},
-        {'url': 'https://image.tmdb.org/t/p/w500/vpnVM9B6NMmQpWeZvzLvDESb2QY.jpg',
-            'name': "Inside Out 2", "rating": round(7.685)},
-        {'url': 'https://image.tmdb.org/t/p/w500/wWba3TaojhK7NdycRhoQpsG0FaH.jpg',
-            'name': "Despicable Me 4", "rating": round(7.3)},
-        {'url': 'https://image.tmdb.org/t/p/w500/pjnD08FlMAIXsfOLKQbvmO0f0MD.jpg',
-            'name': "Twisters", "rating": round(7.046)},
-        {'url': 'https://image.tmdb.org/t/p/w500/d9CTnTHip1RbVi2OQbA2LJJQAGI.jpg',
-            'name': "The Union", "rating": round(6.347)},
-    ]
+@router.get("/home", response_class=HTMLResponse)
+async def home_page(request: Request, db=Depends(get_db)):
+    data = await get_movies(db)
 
     return templates.TemplateResponse(
         "index.html",
-        {"request": request, "links": links}
+        {"request": request, "data": data}
     )
+
+
+@router.get("/search", response_class=HTMLResponse)
+async def search_page(request: Request, movie_data=Depends(search_query)):
+    return templates.TemplateResponse(
+        "search.html",
+        {
+            "request": request,
+            "movies": movie_data,
+        })
