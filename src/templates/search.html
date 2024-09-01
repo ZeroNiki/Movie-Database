@@ -6,18 +6,22 @@
 
 {% block content %}
 <div class="search-results">
-  {% for movie in movies %}
-    <div class="result">
-      <a href="#"><img src="{{ movie.poster_path }}" alt="poster"></a>
+    {% for movie in movies %}
+      <div class="result">
+        {% if movie != "Not found" %}
+          <a href="/pages/movie/{{ movie.id }}"><img src="{{ movie.poster_path }}" alt="poster"></a>
 
-      <a href="#" class="result-name">{{ movie.title }}</a>
-
-      <p class="result-date">{{ movie.date }}</p>
-
-      <div class="result-discription">
-        <!-- <p></p> -->
+          <div class="result-discription">
+            <a href="/pages/movie/{{ movie.id }}" class="result-name">{{ movie.title }}</a>
+            <p class="result-date">{{ movie.date }}</p>
+            <p class="result-overview">{{ movie.overview }}</p>
+          </div>
+        {% else %}
+          <div class="result-discription">
+            <h3>Movie not found</h3>
+          </div>
+        {% endif %}
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
 </div>
 {% endblock %}

@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse
 from typing import Optional
 from fastapi.templating import Jinja2Templates
 
-from src.operations.router import get_movies, search_query
+from src.operations.router import get_movies, search_query, movie_data
 from src.operations.utils import get_db
 
 
@@ -26,10 +26,21 @@ async def home_page(request: Request, db=Depends(get_db)):
 
 
 @router.get("/search", response_class=HTMLResponse)
-async def search_page(request: Request, movie_data=Depends(search_query)):
+async def search_page(request: Request, m_data=Depends(search_query)):
     return templates.TemplateResponse(
         "search.html",
         {
             "request": request,
-            "movies": movie_data,
+            "movies": m_data,
         })
+
+
+@router.get("/movie/{movie_id}", response_class=HTMLResponse)
+async def movie_page(request: Request, m_data=Depends(movie_data)):
+    return templates.TemplateResponse(
+        "page.html",
+        {
+            "request": request,
+            "movie": m_data
+        }
+    )

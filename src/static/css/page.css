@@ -1,0 +1,10 @@
+.info {
+  background-color: green;
+  width: 1200px;
+  height: 700px;
+  display: flex;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', path='css/page.css') }}">
+<title>{{ movie[0].title }}</title>
+{% endblock %}
+
+{% block content %}
+<div class="info">
+  <!-- <img src="{{ movie[0].poster_path }}" alt="poster"> -->
+  <!-- <div class="result-discription"> -->
+  <!--   <h1>{{ movie[0].title }}</h1> -->
+  <!--   <p class="result-date">{{ movie[0].date }}</p> -->
+  <!--   <div class="movie-rating  -->
+  <!--     {% if movie[0].vote_average|int >= 8 %} -->
+  <!--       rating-green -->
+  <!--     {% elif movie[0].vote_average|int >= 5 %} -->
+  <!--       rating-yellow -->
+  <!--     {% else %} -->
+  <!--       rating-red -->
+  <!--     {% endif %}"> -->
+  <!--   {{ movie[0].vote_average }} -->
+  <!--   </div> -->
+  <!--   <p class="result-overview">{{ movie[0].overview }}</p> -->
+  <!-- </div> -->
+</div>
+{% endblock %}

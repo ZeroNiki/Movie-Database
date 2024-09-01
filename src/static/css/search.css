@@ -1,6 +1,5 @@
 .search-results {
   display: block;
-  background-color: green;
   position: absolute;
   width: 1200px;
   height: 100vh;
@@ -11,31 +10,53 @@
 }
 
 .result {
+  display: flex;
   height: 200px;
-  background-color: lightblue;
-  /* padding: 20px; */
+  margin: 20px 10px;
   margin-top: 20px;
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 20px;
-  border: 1px solid black;
+  border: 1px solid #888;
+  border-radius: 10px;
 }
 
-/* Убираем отступ у последнего div */
 .result:last-child {
   margin-bottom: 0;
 }
 
 .result img {
+  border-radius: 10px;
   width: 150px;
   height: 100%;
 }
 
+.result-discription {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px;
+}
+
+.result-name,
+.result-date {
+  margin-left: 5px;
+}
+
 .result-name {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
   text-decoration: none;
-  padding-top: 20px;
+  margin-bottom: 5px;
 }
 
 .result-date {
-  padding-top: 0px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.result-overview {
+  font-size: 15px;
+  margin-left: 5px;
 }

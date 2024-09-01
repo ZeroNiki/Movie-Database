@@ -9,7 +9,7 @@
 
   <div class="movie-list">
     {% for row in data %} 
-      <a href="#">
+    <a href="/pages/movie/{{ row.id }}">
         <img src="{{ row.poster_path }}" alt="hello world">
         <div class="movie-rating 
             {% if row.vote_average|int >= 8 %}

@@ -24,7 +24,7 @@
   <div class="content">
     <div class="media-search">
       <form id="inputForm" onsubmit="return false;">
-        <input type="text" placeholder="Enter name the movie" id="input-movie" >
+        <input type="text" placeholder="Enter name the movie" id="input-movie" autocomplate="none">
         <button class="enter-btn" onclick="SearchSymbol()">Search</button>
       </form>
     </div>
@@ -35,7 +35,12 @@
 <script>
 const SearchSymbol = () => {
     const searchInputValue = document.getElementById("input-movie").value;
-    window.location.href = `/pages/search?q=${searchInputValue}`;
+
+    if (searchInputValue.length < 2) {
+        alert("Query string too short, must be at least 2 characters.");
+    } else {
+        window.location.href = `/pages/search?q=${searchInputValue}`;
+    }
   }
 </script>
 </body>

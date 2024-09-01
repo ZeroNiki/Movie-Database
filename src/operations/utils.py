@@ -12,6 +12,9 @@ async def get_db():
 
 
 def format_date(date_str: str) -> str:
-    date_obj = datetime.strptime(date_str, '%Y-%m-%d')
-    formatted_date = date_obj.strftime('%d %B %Y')
-    return formatted_date
+    try:
+        date_obj = datetime.strptime(date_str, '%Y-%m-%d')
+        formatted_date = date_obj.strftime('%d %B %Y')
+        return formatted_date
+    except:
+        return "Not found"
