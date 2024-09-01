@@ -1,4 +1,7 @@
 venv/
+migrations/__pycache__
+migrations/versions
 src/__pycache__
 src/pages/__pycache__
+src/operations/__pycache__
 tokens.txt
