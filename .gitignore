@@ -4,4 +4,5 @@ migrations/versions
 src/__pycache__
 src/pages/__pycache__
 src/operations/__pycache__
+src/auth/__pycache__
 tokens.txt
