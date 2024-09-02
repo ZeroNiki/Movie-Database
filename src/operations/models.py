@@ -11,5 +11,5 @@ movies = Table(
     Column("overview", String),
     Column("release_date", Date),
     Column("vote_average", REAL),
-    Column("poster_path", String)
+    Column("poster_path", String),
 )
