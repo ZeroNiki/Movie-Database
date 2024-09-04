@@ -6,7 +6,8 @@ from src.auth.manager import get_user_manager
 from src.auth.models import User
 from src.config import AUTH_TOKEN
 
-cookie_transport = CookieTransport(cookie_max_age=3600)
+cookie_transport = CookieTransport(
+    cookie_max_age=3600, cookie_name="auth_token")
 
 
 def get_jwt_strategy() -> JWTStrategy:
@@ -24,4 +25,4 @@ fastapi_users = FastAPIUsers[User, int](
     [auth_backend]
 )
 
-current_user = fastapi_users.current_user()
+current_user = fastapi_users.current_user(True)

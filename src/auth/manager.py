@@ -1,9 +1,11 @@
 from typing import Optional
 from fastapi import Depends, Request
 from fastapi_users import BaseUserManager, IntegerIDMixin
+from sqlalchemy import select
 
 from src.auth.models import User
 from src.auth.utils import get_user_db
+from src.db import get_async_session
 from src.config import AUTH_TOKEN
 
 
