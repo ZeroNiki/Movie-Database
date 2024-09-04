@@ -1,6 +1,5 @@
-from fastapi import APIRouter, Request, Depends, HTTPException
+from fastapi import APIRouter, Request, Depends
 from fastapi.responses import HTMLResponse
-from typing import Optional
 from fastapi.templating import Jinja2Templates
 
 from src.operations.router import get_movies, search_query, movie_data
@@ -44,3 +43,13 @@ async def movie_page(request: Request, m_data=Depends(movie_data)):
             "movie": m_data
         }
     )
+
+
+@router.get("/register", response_class=HTMLResponse)
+async def register(request: Request):
+    return templates.TemplateResponse("sign_up.html", {"request": request})
+
+
+@router.get("/login", response_class=HTMLResponse)
+async def login(request: Request):
+    return templates.TemplateResponse("sign_in.html", {"request": request})
