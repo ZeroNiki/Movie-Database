@@ -16,9 +16,9 @@
       <ul>
         <li><a href="#">About</a></li>
         {% if user %}
-          <li><a href="#">{{ user.username }}</a></li>
+          <li><a href="#" class="username">{{ user.username }}</a></li>
           <form action="logout" method="post">
-            <input type="submit" value="Logout">
+            <input type="submit" value="Logout" class="logout">
           </form>
         {% else %}
           <li><a href="/pages/login">Sign in</a></li>
