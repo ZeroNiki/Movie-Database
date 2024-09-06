@@ -27,7 +27,6 @@ templates = Jinja2Templates(directory="src/templates")
 
 @router.get("/home", response_class=HTMLResponse)
 async def home_page(request: Request, db=Depends(get_db), user=Depends(current_user)):
-    print(user)
     data = await get_movies(db)
 
     return templates.TemplateResponse(

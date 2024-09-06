@@ -130,20 +130,187 @@ body {
   background-color: #e60000;
 }
 
-/* 
-  Extra small devices (phones, 600px and down) 
-*/
-@media only screen and (max-width: 600px) {
-  nav {
+/* Адаптация для телефонов и планшетов */
+@media only screen and (max-width: 900px) {
+  .nav {
     flex-direction: column;
+    align-items: center;
   }
 
-  nav ul {
-    flex-direction: column;
-    padding-top: 0.5rem;
+  .nav h2 {
+    padding-left: 0;
+    font-size: 1.2rem;
   }
 
-  nav li {
+  .nav ul {
+    flex-direction: column;
+    margin-top: 1rem;
+  }
+
+  .nav li {
     padding: 0.5rem 0;
+  }
+
+  .media-search {
+    width: 90%;
+    height: auto;
+    flex-direction: column;
+  }
+
+  .search-results {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .result {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .result img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .movie-list {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .movie-list img {
+    width: 150px;
+    height: 200px;
+  }
+}
+
+/* Более узкие экраны */
+@media only screen and (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .media-search {
+    width: 100%;
+  }
+
+  .media-search input {
+    width: 80%;
+  }
+
+  .enter-btn {
+    width: auto;
+    padding: 10px;
+  }
+
+  .search-results {
+    width: 100%;
+    padding: 0;
+  }
+
+  .result {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .result img {
+    width: 80px;
+  }
+
+  .popular-movie {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .movie-list {
+    width: 100%;
+  }
+
+  .movie-list img {
+    width: 100px;
+    height: auto;
+  }
+}
+
+/* Другие медиа-запросы для улучшения адаптивности на средних экранах */
+@media only screen and (max-width: 1024px) {
+  .nav h2 {
+    padding-left: 0;
+  }
+
+  .nav ul {
+    margin-right: 5rem;
+  }
+
+  .movie-list {
+    width: 100%;
+    height: auto;
+  }
+
+  .info {
+    width: 90%;
+    height: auto;
+  }
+
+  .movie-discription {
+    width: 100%;
+  }
+}
+
+/* Более узкие экраны */
+@media only screen and (max-width: 600px) {
+  .nav {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .media-search {
+    width: 100%;
+  }
+
+  .media-search input {
+    width: 80%;
+  }
+
+  .enter-btn {
+    width: auto;
+    padding: 10px;
+  }
+
+  .search-results {
+    width: 100%;
+    padding: 0;
+  }
+
+  .result {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+
+  .result img {
+    width: 80px;
+  }
+
+  .popular-movie {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .movie-list {
+    width: 100%;
+  }
+
+  .movie-list img {
+    width: 100px;
+    height: auto;
   }
 }

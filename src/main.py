@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse, FileResponse
+
 
 from src.pages.router import router as rt_pages
 from src.operations.router import router as rt_operatinos
@@ -11,6 +12,11 @@ from src.auth.schemas import UserCreate, UserRead
 app = FastAPI(
     title="Movie Data Base"
 )
+
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    return FileResponse("static/Favicon/favicon.ico")
 
 
 @app.get("/")

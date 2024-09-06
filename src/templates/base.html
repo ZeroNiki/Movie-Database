@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css') }}" />
+  <link rel="icon" type="image/x-icon" href="{{ url_for('static', path='/Favicon/favicon.ico') }}">
 
   {% block head %} {% endblock %}
 </head>
@@ -14,7 +15,7 @@
     <div class="nav">
       <h2><a href="/pages/home/">Home</a></h2>
       <ul>
-        <li><a href="#">About</a></li>
+        <li><a href="https://github.com/ZeroNiki/Movie-Database">About</a></li>
         {% if user %}
           <li><a href="#" class="username">{{ user.username }}</a></li>
           <form action="logout" method="post">
