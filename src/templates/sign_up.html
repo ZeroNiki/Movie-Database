@@ -7,11 +7,18 @@
       rel="stylesheet"
       href="{{ url_for('static', path='css/account.css') }}"
     />
+
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="{{ url_for('static', path='/Favicon/favicon.ico') }}"
+    />
+
     <title>Sing up</title>
   </head>
 
   <body>
-    <form action="create" method="post">
+    <form action="create" method="post" onsubmit="validateForm(event)">
       <div class="container">
         <h1>Register</h1>
         <p>Please fill in this form to create an account.</p>
@@ -49,4 +56,25 @@
       </div>
     </form>
   </body>
+
+  <script>
+    function validateForm(event) {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+
+      var emailValid = email.includes("@");
+      var passwordValid = password.length >= 8;
+
+      if (!emailValid && !passwordValid) {
+        alert("Incorrect email and password must be at least 8 characters.");
+        event.preventDefault();
+      } else if (!emailValid) {
+        alert("Incorrect email.");
+        event.preventDefault();
+      } else if (!passwordValid) {
+        alert("Password must be at least 8 characters.");
+        event.preventDefault();
+      }
+    }
+  </script>
 </html>

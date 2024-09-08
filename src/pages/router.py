@@ -98,6 +98,13 @@ async def login_user(email: str = Form(...), password: str = Form(...)):
                     username=email, password=password)
                 user = await user_manager.authenticate(credentials)
 
+                if not user:
+                    return {
+                        "Message": "Error",
+                        "Detail": "User not found",
+                        "Solution": "Go back and enter correct email and password"
+                    }
+
                 jwt_strg = get_jwt_strategy()
                 token = await jwt_strg.write_token(user)
 
