@@ -29,7 +29,7 @@ git clone https://github.com/ZeroNiki/Movie-Database.git
 cd git
 ```
 
-<img src="https://github.com/ZeroNiki/Movie-Database/blob/main/media/render_git.gif" alt="Alt text" width="700" height="500">
+<img src="https://github.com/ZeroNiki/Movie-Database/blob/main/media/render_git.gif" alt="Alt text" width="800" height="500">
 
 configure `.env` file:
 
@@ -73,7 +73,7 @@ Once you have configured the `.env` file and create venv you can start running t
 uvicorn src.main:app --reload
 ```
 
-<img src="https://github.com/ZeroNiki/Movie-Database/blob/main/media/render_uvicorn.gif" alt="Alt text" width="700" height="500">
+<img src="https://github.com/ZeroNiki/Movie-Database/blob/main/media/render_uvicorn.gif" alt="Alt text" width="800" height="500">
 
 go to http://127.0.0.1:8000
 
