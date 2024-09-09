@@ -1,5 +1,18 @@
 # Movie Database
 
+## Navigation
+
+- [About](#About)
+- [Install](#Install)
+- [About the database](#About-the-database)
+  - [Alembic migrations](#Alembic-migrations)
+  - [Where did I get the data from?](#Where-did-I-get-the-data-from?)
+- [Architecture of the project](#Architecture-of-the-project)
+  - [Routes](#Routes)
+- [TODO](#TODO)
+
+## About
+
 lib:
 
 - fastapi
@@ -15,6 +28,8 @@ This is a web application for displaying movies. It is possible to register and 
 git clone https://github.com/ZeroNiki/Movie-Database.git
 cd git
 ```
+
+<img src="https://github.com/ZeroNiki/Movie-Database/blob/main/media/render_git.gif" alt="Alt text" width="500" height="300">
 
 configure `.env` file:
 
@@ -35,6 +50,82 @@ AUTH_TOKEN=xxxx
 `PORT` - Port of your database (by default `5432`)
 
 `AUTH_TOKEN` - Here you can use the token generator
+
+Create virtual environment:
+
+```bash
+python3 -m venv venv
+
+source venv/bin/activate
+```
+
+If you use Windows 10:
+
+```bash
+python -m venv venv
+
+venv\Scripts\activate
+```
+
+Once you have configured the `.env` file and create venv you can start running the application:
+
+```bash
+uvicorn src.main:app --reload
+```
+
+<img src="https://github.com/ZeroNiki/Movie-Database/blob/main/media/render_uvicorn.gif" alt="Alt text" width="500" height="300">
+
+go to http://127.0.0.1:8000
+
+## About the database
+
+**PostgreSQL** is used as a database
+The bd template is found in `Database example` dir
+
+### Alembic migrations
+
+```bash
+alembic revision --autogenerate -m "First init"
+
+alembic upgrade head
+```
+
+### Where did I get the data from?
+
+Taken from the API of this [resource](https://developer.themoviedb.org/docs/getting-started)
+
+## Architecture of the project
+
+```
+  src
+   ├── auth
+   │   └── ...
+   ├── operations
+   │   └── ...
+   ├── pages
+   │   └── ...
+   ├── static
+   │   ├── css
+   │   │   └── ...
+   │   └── Favicon
+   │       └── ...
+   └── templates
+       └── ...
+```
+
+`src/auth` - Everything in this folder is intended for user authorization
+`src/operations` - Designed for interaction with the database
+`src/pages` - For pages
+`src/static` - For static files (css, js, media content)
+`src/templates` - For html
+
+### Routes
+
+`/pages/home/` - home page
+`/pages/search?q={keyword}` - search page
+`/pages/movie/{movie_id}` - movie page
+`/pages/register` - Signup page
+`/pages/login` - Login page
 
 ## TODO
 
