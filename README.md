@@ -113,19 +113,19 @@ Taken from the API of this [resource](https://developer.themoviedb.org/docs/gett
        └── ...
 ```
 
-`src/auth` - Everything in this folder is intended for user authorization
-`src/operations` - Designed for interaction with the database
-`src/pages` - For pages
-`src/static` - For static files (css, js, media content)
-`src/templates` - For html
+`src/auth` - Everything in this folder is intended for user authorization<br>
+`src/operations` - Designed for interaction with the database<br>
+`src/pages` - For pages<br>
+`src/static` - For static files (css, js, media content)<br>
+`src/templates` - For html<br>
 
 ### Routes
 
-`/pages/home/` - home page
-`/pages/search?q={keyword}` - search page
-`/pages/movie/{movie_id}` - movie page
-`/pages/register` - Signup page
-`/pages/login` - Login page
+`/pages/home/` - home page<br>
+`/pages/search?q={keyword}` - search page<br>
+`/pages/movie/{movie_id}` - movie page<br>
+`/pages/register` - Signup page<br>
+`/pages/login` - Login page<br>
 
 ## TODO
 
