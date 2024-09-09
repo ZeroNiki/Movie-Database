@@ -58,6 +58,8 @@ Create virtual environment:
 ```bash
 python3 -m venv venv
 
+pip install -r requirements.txt
+
 source venv/bin/activate
 ```
 
@@ -65,6 +67,8 @@ If you use Windows 10:
 
 ```bash
 python -m venv venv
+
+pip install -r requirements.txt
 
 venv\Scripts\activate
 ```

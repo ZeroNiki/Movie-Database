@@ -56,6 +56,8 @@ AUTH_TOKEN=xxxx
 ```bash
 python3 -m venv venv
 
+pip install -r requirements.txt
+
 source venv/bin/activate
 ```
 
@@ -63,6 +65,8 @@ source venv/bin/activate
 
 ```bash
 python -m venv venv
+
+pip install -r requirements.txt
 
 venv\Scripts\activate
 ```
