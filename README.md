@@ -2,6 +2,8 @@
 
 ## Navigation
 
+[RU README.md](https://github.com/ZeroNiki/Movie-Database/blob/main/RU_README.md)
+
 - [About](#About)
 - [Install](#Install)
 - [About the database](#About-the-database)
@@ -31,7 +33,7 @@ cd git
 
 <img src="https://github.com/ZeroNiki/Movie-Database/blob/main/media/render_git.gif" alt="Alt text" width="800" height="500">
 
-configure `.env` file:
+configure [.env](https://github.com/ZeroNiki/Movie-Database/blob/main/.env) file:
 
 ```
 DATABASE=xxxx
@@ -67,7 +69,7 @@ python -m venv venv
 venv\Scripts\activate
 ```
 
-Once you have configured the `.env` file and create venv you can start running the application:
+Once you have configured the [.env](https://github.com/ZeroNiki/Movie-Database/blob/main/.env) file and create venv you can start running the application:
 
 ```bash
 uvicorn src.main:app --reload
@@ -80,7 +82,7 @@ go to http://127.0.0.1:8000
 ## About the database
 
 **PostgreSQL** is used as a database
-The bd template is found in `Database example` dir
+The bd template is found in [Database example](https://github.com/ZeroNiki/Movie-Database/tree/main/Database%20example) dir
 
 ### Alembic migrations
 
