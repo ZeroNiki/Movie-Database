@@ -1,4 +1,5 @@
 venv/
+.venv
 migrations/__pycache__
 migrations/versions
 src/__pycache__
