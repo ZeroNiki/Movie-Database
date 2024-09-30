@@ -1,6 +1,6 @@
 import bcrypt
 from datetime import datetime
-
+ 
 from fastapi_users_db_sqlalchemy import SQLAlchemyBaseUserTable
 from src.db import Base
 from sqlalchemy import (JSON, TIMESTAMP, Boolean, Column,
