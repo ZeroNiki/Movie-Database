@@ -9,6 +9,7 @@ from src.config import DATABASE, HOST, USER, PORT, PASSWORD
 
 DATABASE_URL = f"postgresql+asyncpg://{
     USER}:{PASSWORD}@{HOST}:{PORT}/{DATABASE}"
+print(DATABASE_URL)
 
 engine = create_async_engine(DATABASE_URL, poolclass=NullPool)
 
