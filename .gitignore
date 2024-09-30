@@ -68,6 +68,7 @@ dmypy.json
 .prof
 
 # alembic
+migrations/versions
 migrations/versions/*.pyc
 migrations/versions/*.pyo
 migrations/versions/__pycache__/
