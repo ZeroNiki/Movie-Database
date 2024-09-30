@@ -1,0 +1,74 @@
+# Python
+*.py[cod]
+__pycache__/
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Venv
+env/
+venv/
+.venv/
+.venv
+ENV/
+env.bak/
+venv.bak/
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Environment variables
+.env_dev
+tokens.txt
+
+# Logs
+*.log
+logs/
+
+# Celery beat schedule file
+celerybeat-schedule
+
+# Database files
+*.sqlite3
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Docker
+docker-compose.override.yml
+.dockerignore
+docker-compose*.yml
+Dockerfile*
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# Mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pytest
+.pytest_cache/
+
+# Profiling data
+.prof
+
+# alembic
+migrations/versions/*.pyc
+migrations/versions/*.pyo
+migrations/versions/__pycache__/
+migrations/versions/*.sqlite3
