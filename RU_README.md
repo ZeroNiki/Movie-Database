@@ -88,7 +88,11 @@ uvicorn src.main:app --reload
 
 ### Миграции Alembic
 
+**сначала создайте каталог `versions` в `migrations/`**
+
 ```bash
+mkdir migrations/versions
+
 alembic revision --autogenerate -m "First init"
 
 alembic upgrade head

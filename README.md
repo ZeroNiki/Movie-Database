@@ -90,7 +90,11 @@ The bd template is found in [Database example](https://github.com/ZeroNiki/Movie
 
 ### Alembic migrations
 
+**first create a directory `versions` in `migrations/`**
+
 ```bash
+mkdir migrations/versions
+
 alembic revision --autogenerate -m "First init"
 
 alembic upgrade head
