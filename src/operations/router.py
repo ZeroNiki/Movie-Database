@@ -1,3 +1,5 @@
+# TODO: add put update for db
+
 from fastapi import APIRouter, HTTPException, Depends, Query
 from sqlalchemy.orm import Session
 from sqlalchemy import select
@@ -10,6 +12,35 @@ router = APIRouter(
     prefix="/operations",
     tags=["Operations"]
 )
+
+
+@router.get("/list_data")
+async def list_data(db: Session = Depends(get_db)):
+    try:
+        query = select(
+            movies.c.id,
+            movies.c.title,
+            movies.c.vote_average,
+            movies.c.poster_path,
+        )
+
+        result = await db.execute(query)
+        data = result.fetchall()
+
+        data_dict = [{
+            "id": row[0],
+            "title": row[1],
+            "vote_average": round(row[2]),
+            "poster_path": f"https://image.tmdb.org/t/p/w500{row[3]}"
+        } for row in data]
+
+        return data_dict
+
+    except Exception as e:
+        return {
+            "Message": "Error",
+            "Detail": e
+        }
 
 
 # This is only for home page
