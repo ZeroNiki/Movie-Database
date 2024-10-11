@@ -1,3 +1,5 @@
+# TODO: update roles for users
+
 from fastapi_users.authentication import CookieTransport
 from fastapi_users.authentication import JWTStrategy, AuthenticationBackend
 from fastapi_users import FastAPIUsers
